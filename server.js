@@ -19,7 +19,6 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/enviar-email", async (req, res) => {
-    console.log(req.body); // Aqui você verá os dados recebidos
 
     const { nome, telefone, email, assunto, descricao } = req.body;
 
