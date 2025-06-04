@@ -19,6 +19,8 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/enviar-email", async (req, res) => {
+    console.log(req.body); // Aqui você verá os dados recebidos
+
     const { nome, telefone, email, assunto, descricao } = req.body;
 
     const mailOptions = {
@@ -38,5 +40,5 @@ app.post("/enviar-email", async (req, res) => {
 });
 
 // Iniciar o servidor
-const PORT = 5000;
+const PORT = 5002;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
